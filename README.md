@@ -25,7 +25,7 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 ```
 
-4. platanus_trim и platanus_internal_trim и их оценка через fastqc и multiqc. Удаляем ненужные файлы
+4. platanus_trim и platanus_internal_trim и их оценивание. Удаляем ненужные файлы
 ```
 platanus_trim sub_oil_*
 platanus_internal_trim sub_oilMP*
@@ -46,7 +46,7 @@ time platanus scaffold -o Poil -c Poil_contig.fa -IP1 sub_oil_R1.fastq.trimmed s
 time platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub_oil_R1.fastq.trimmed sub_oil_R2.fastq.trimmed -OP2 sub_oilMP_S4_L001_R1_001.fastq.int_trimmed sub_oilMP_S4_L001_R2_001.fastq.int_trimmed
 ```
 
-
+6. см ноутбук
 Notebook - https://colab.research.google.com/drive/10BIKVMK_n4MeSJ8zvVOPJwQ3-k-eaZIH?usp=sharing
 
 Результаты пункта 3
