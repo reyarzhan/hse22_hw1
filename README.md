@@ -45,3 +45,15 @@ time platanus assemble -o Poil -t 8 -m 28 -f sub_oil_R1.fastq.trimmed sub_oil_R2
 time platanus scaffold -o Poil -c Poil_contig.fa -IP1 sub_oil_R1.fastq.trimmed sub_oil_R2.fastq.trimmed -OP2 sub_oilMP_S4_L001_R1_001.fastq.int_trimmed sub_oilMP_S4_L001_R2_001.fastq.int_trimmed
 time platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub_oil_R1.fastq.trimmed sub_oil_R2.fastq.trimmed -OP2 sub_oilMP_S4_L001_R1_001.fastq.int_trimmed sub_oilMP_S4_L001_R2_001.fastq.int_trimmed
 ```
+
+
+Notebook - https://colab.research.google.com/drive/10BIKVMK_n4MeSJ8zvVOPJwQ3-k-eaZIH?usp=sharing
+
+Результаты пункта 3
+
+<img width="1472" alt="Screen Shot 2022-10-05 at 19 31 55" src="https://user-images.githubusercontent.com/93340670/194142695-90a57627-a18e-4472-864b-cc0aad1b1af5.png">
+
+Результаты пункта 4
+
+<img width="1476" alt="Screen Shot 2022-10-05 at 19 33 31" src="https://user-images.githubusercontent.com/93340670/194142853-33a786b0-5b39-4af0-8e70-d16b03f97028.png">
+
