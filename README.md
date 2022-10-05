@@ -25,3 +25,25 @@ mkdir multiqc
 multiqc -o multiqc fastqc
 ```
 
+4. platanus_trim и platanus_internal_trim и их оценка через fastqc и multiqc. Удаляем ненужные файлы
+```
+platanus_trim sub_oil_*
+platanus_internal_trim sub_oilMP*
+mkdir trim
+mv  -v *trimmed trim
+
+mkdir fastqc_trim
+ls *trim | xargs -tI{} fastqc -o fastqc_trim {}
+
+rm sub*
+```
+
+5.platanus assemble, platanus scaffold,platanus gap_close.
+```
+cd trim
+time platanus assemble -o Poil -t 8 -m 28 -f sub_oil_R1.fastq.trimmed sub_oil_R2.fastq.trimmed
+time platanus scaffold -o Poil -c Poil_contig.fa -IP1 sub_oil_R1.fastq.trimmed sub_oil_R2.fastq.trimmed -OP2 sub_oilMP_S4_L001_R1_001.fastq.int_trimmed sub_oilMP_S4_L001_R2_001.fastq.int_trimmed
+time platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 sub_oil_R1.fastq.trimmed sub_oil_R2.fastq.trimmed -OP2 sub_oilMP_S4_L001_R1_001.fastq.int_trimmed sub_oilMP_S4_L001_R2_001.fastq.int_trimmed
+```
+
+5.
